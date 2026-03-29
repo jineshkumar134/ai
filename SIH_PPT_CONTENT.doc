@@ -1,0 +1,120 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+    <meta charset="utf-8">
+    <title>WaveWatch SIH 2025 Submission PPT Content</title>
+    <!--[if gte mso 9]>
+    <xml>
+        <w:WordDocument>
+            <w:View>Print</w:View>
+            <w:Zoom>90</w:Zoom>
+            <w:DoNotOptimizeForBrowser/>
+        </w:WordDocument>
+    </xml>
+    <![endif]-->
+    <style>
+        body { font-family: 'Arial', sans-serif; line-height: 1.6; color: #333; padding: 40px; }
+        h1 { color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 10px; margin-top: 30px; }
+        h2 { color: #007bff; margin-top: 25px; }
+        h3 { color: #17a2b8; margin-top: 20px; }
+        p { margin-bottom: 15px; }
+        ul { margin-bottom: 20px; }
+        li { margin-bottom: 8px; }
+        .slide-container { border: 1px solid #ddd; padding: 20px; margin-bottom: 30px; border-radius: 8px; background: #fafafa; }
+        .slide-header { font-weight: bold; background: #0056b3; color: white; padding: 10px; margin: -20px -20px 20px -20px; border-radius: 8px 8px 0 0; }
+        .tagline { italic; color: #666; font-size: 1.1em; }
+    </style>
+</head>
+<body>
+    <div style="text-align: center; margin-bottom: 50px;">
+        <h1>WaveWatch AI: Presentation Content</h1>
+        <p class="tagline">Smart India Hackathon 2025 | Problem Statement: 25039</p>
+        <p><strong>Organization:</strong> Ministry of Earth Sciences (MoES) - INCOIS</p>
+    </div>
+
+    <!-- Slide 1 -->
+    <div class="slide-container">
+        <div class="slide-header">SLIDE 1: TITLE SLIDE</div>
+        <h2>WaveWatch AI</h2>
+        <p><strong>Tagline:</strong> Bridging the Gap between Official Warnings and Ground Reality.</p>
+        <h3>Project Details:</h3>
+        <ul>
+            <li><strong>PS ID:</strong> 25039</li>
+            <li><strong>Category:</strong> Software - Advanced Analytics / Disaster Management</li>
+            <li><strong>Organization:</strong> Indian National Centre for Ocean Information Services (INCOIS)</li>
+            <li><strong>Team Members:</strong> [Enter Team Member Names]</li>
+        </ul>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide-container">
+        <div class="slide-header">SLIDE 2: PROBLEM STATEMENT DESCRIPTION</div>
+        <h2>The Coastal Awareness Gap</h2>
+        <ul>
+            <li><strong>Incomplete Ground Awareness:</strong> Early warning systems rely on satellite and sensors, but real-time validation from coastal residents is often missing.</li>
+            <li><strong>Untapped Social Intelligence:</strong> Social media holds critical situational data (locations of flooding/damage) that isn't currently integrated into formal dashboards.</li>
+            <li><strong>Misinformation Risks:</strong> During coastal events, false information spreads rapidly. There is no unified, verified "truth-hub" for crowdsourced data.</li>
+        </ul>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide-container">
+        <div class="slide-header">SLIDE 3: PROPOSED SOLUTION</div>
+        <h2>WaveWatch: Integrated SOS & Analytics Platform</h2>
+        <p>Our solution is a deep-tech ecosystem that merges three critical data streams:</p>
+        <ul>
+            <li><strong>Crowdsourced SOS Portal:</strong> A lightweight PWA allowing coastal residents to upload geotagged hazard photos/videos with automated metadata verification.</li>
+            <li><strong>Social Media Intelligence:</strong> Real-time scrapers analyzing Twitter/Facebook/Instagram for trending hazard keywords and sentiment spikes.</li>
+            <li><strong>Official Correlation:</strong> Automatic cross-referencing with INCOIS/OpenWeather APIs to validate ground reports.</li>
+        </ul>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="slide-container">
+        <div class="slide-header">SLIDE 4: SYSTEM ARCHITECTURE</div>
+        <h2>Under the Hood: Data Flow</h2>
+        <ul>
+            <li><strong>Ingestion Layer:</strong> React Native/PWA for user reports; Node.js scrapers for Social Media feeds.</li>
+            <li><strong>Processing (The AI Core):</strong> BERT/Gemini NLP for noise reduction; OpenCV for simple image verification in reports.</li>
+            <li><strong>Storage & Delivery:</strong> Firebase for real-time sync; Mapbox GL JS for interactive heatmap visualization.</li>
+            <li><strong>Output:</strong> High-fidelity dashboard for disaster responders showing "Hotspots" and verified SOS alerts.</li>
+        </ul>
+    </div>
+
+    <!-- Slide 5 -->
+    <div class="slide-container">
+        <div class="slide-header">SLIDE 5: TECHNICAL DEPTH</div>
+        <h2>Advanced Features & Reliability</h2>
+        <ul>
+            <li><strong>Multi-Factor Verification:</strong> Reports are scored based on Geolocation + Incident Time + Image Metadata + Historical User Trust.</li>
+            <li><strong>NLP Noise Filtering:</strong> LLM-driven filtering distinguish between "General Discussion" and "Actionable Hazard Alerts" in social feeds.</li>
+            <li><strong>Offline-First Reporting:</strong> Service workers ensure hazard reports are saved locally and synced automatically when connectivity returns.</li>
+        </ul>
+    </div>
+
+    <!-- Slide 6 -->
+    <div class="slide-container">
+        <div class="slide-header">SLIDE 6: BUSINESS & SOCIAL IMPACT</div>
+        <h2>Saving Lives & Resources</h2>
+        <ul>
+            <li><strong>Rapid Response:</strong> Closes the "last-mile" awareness gap, enabling deployment of resources 30-40% faster.</li>
+            <li><strong>Cost Efficiency:</strong> Reduces the need for physical surveys using verified crowdsourced photography of coastal damage.</li>
+            <li><strong>Resilient Communities:</strong> Bridges trust between government organizations (INCOIS) and the coastal population (fishermen, volunteers).</li>
+        </ul>
+    </div>
+
+    <!-- Slide 7 -->
+    <div class="slide-container">
+        <div class="slide-header">SLIDE 7: INNOVATION & USP</div>
+        <h2>What Makes Us Unique?</h2>
+        <ul>
+            <li><strong>Multi-Lingual NLP:</strong> Native support for 8+ coastal languages to ensure every citizen can report accurately.</li>
+            <li><strong>Predictive Sentiment Spikes:</strong> Using "Social Volume" as an early indicator that a hazard is escalating *before* sensor threshold alerts.</li>
+            <li><strong>Edge AI Verification:</strong> On-device processing to ensure report quality even in low-bandwidth zones.</li>
+        </ul>
+    </div>
+
+    <div style="text-align: center; margin-top: 50px; border-top: 1px solid #ddd; padding-top: 20px;">
+        <p><em>Formulated for Smart India Hackathon 2025 Submission.</em></p>
+    </div>
+</body>
+</html>
