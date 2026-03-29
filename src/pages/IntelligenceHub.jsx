@@ -33,17 +33,17 @@ export default function IntelligenceHub() {
 
     useEffect(() => {
         // Fetch regret list
-        fetch('http://localhost:3001/api/intelligence/regret-analysis')
+        fetch('/api/intelligence/regret-analysis')
             .then(res => res.json())
             .then(data => setRegrets(data))
         
         // Fetch general sentiment & buzzing stocks
-        fetch('http://localhost:3001/api/intelligence/sentiment')
+        fetch('/api/intelligence/sentiment')
             .then(res => res.json())
             .then(data => setSentiment(data))
         
         setIsBuzzingLoading(true)
-        fetch('http://localhost:3001/api/market/buzzing')
+        fetch('/api/market/buzzing')
             .then(res => res.json())
             .then(data => setBuzzingStocks(data))
             .finally(() => setIsBuzzingLoading(false))
@@ -55,7 +55,7 @@ export default function IntelligenceHub() {
         setBacktestResult(null)
         try {
             const sym = backtestInfo.symbol.includes('.') ? backtestInfo.symbol.toUpperCase() : backtestInfo.symbol.toUpperCase() + '.NS'
-            const res = await fetch(`http://localhost:3001/api/intelligence/backtest`, {
+            const res = await fetch(`/api/intelligence/backtest`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ symbol: sym, strategy: backtestInfo.strategy })
@@ -72,7 +72,7 @@ export default function IntelligenceHub() {
         setPrediction(null)
         try {
             const sym = predictionSymbol.includes('.') ? predictionSymbol.toUpperCase() : predictionSymbol.toUpperCase() + '.NS'
-            const res = await fetch(`http://localhost:3001/api/intelligence/predict/${sym}`)
+            const res = await fetch(`/api/intelligence/predict/${sym}`)
             const data = await res.json()
             setPrediction({ ...data, symbol: sym })
         } catch (err) { alert('Prediction engine failed') }
@@ -83,7 +83,7 @@ export default function IntelligenceHub() {
         if (!pastSymbol || !sellPrice) return
         setIsRegretLoading(true)
         try {
-            const res = await fetch('http://localhost:3001/api/intelligence/regret-analysis', {
+            const res = await fetch('/api/intelligence/regret-analysis', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ symbol: pastSymbol, soldAt: Number(sellPrice) })
@@ -106,7 +106,7 @@ export default function IntelligenceHub() {
         if (!tipText) return
         setIsChecking(true)
         try {
-            const res = await fetch('http://localhost:3001/api/intelligence/reality-check', {
+            const res = await fetch('/api/intelligence/reality-check', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ tipText })
@@ -122,7 +122,7 @@ export default function IntelligenceHub() {
         setIsShadowLoading(true)
         setShadowTrade(null)
         try {
-            const res = await fetch('http://localhost:3001/api/intelligence/shadow/invest', {
+            const res = await fetch('/api/intelligence/shadow/invest', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ symbol: symbol.toUpperCase() + '.NS', amount })

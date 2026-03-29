@@ -11,7 +11,7 @@ export default function OpportunityRadar() {
         const fetchAISignals = async () => {
             setIsLoading(true)
             try {
-                const res = await fetch(`http://localhost:3001/api/radar/signals?category=${activeCategory}`)
+                const res = await fetch(`/api/radar/signals?category=${activeCategory}`)
                 if (res.ok) {
                     const data = await res.json()
                     setSignals(Array.isArray(data) ? data : [])
@@ -27,7 +27,7 @@ export default function OpportunityRadar() {
         setWhyData(null)
         try {
             const sym = symbol.includes('.') ? symbol.toUpperCase() : symbol.toUpperCase() + '.NS'
-            const res = await fetch(`http://localhost:3001/api/stocks/why/${sym}`)
+            const res = await fetch(`/api/stocks/why/${sym}`)
             if (!res.ok) throw new Error('Network error')
             const data = await res.json()
             setWhyData({ ...data, symbol: symbol.toUpperCase() })

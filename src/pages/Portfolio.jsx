@@ -12,7 +12,7 @@ export default function Portfolio() {
 
     const handleBrokerSync = async () => {
         try {
-            const res = await fetch('http://localhost:3001/api/portfolio/broker/sync', {
+            const res = await fetch('/api/portfolio/broker/sync', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(brokerKeys)
@@ -29,7 +29,7 @@ export default function Portfolio() {
     const fetchPortfolio = async () => {
         setIsLoading(true)
         try {
-            const res = await fetch('http://localhost:3001/api/portfolio/sync', { method: 'POST' })
+            const res = await fetch('/api/portfolio/sync', { method: 'POST' })
             const data = await res.json()
             if (Array.isArray(data)) {
                 setHoldings(data)
@@ -53,7 +53,7 @@ export default function Portfolio() {
     const analyzePortfolio = async () => {
         setIsAnalyzing(true)
         try {
-            const res = await fetch('http://localhost:3001/api/portfolio/analysis', {
+            const res = await fetch('/api/portfolio/analysis', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ portfolio: holdings })
@@ -67,7 +67,7 @@ export default function Portfolio() {
     const handleAddStock = async () => {
         if (!newStock.symbol || !newStock.qty) return
         try {
-            await fetch('http://localhost:3001/api/portfolio/add', {
+            await fetch('/api/portfolio/add', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(newStock)
@@ -85,7 +85,7 @@ export default function Portfolio() {
             { symbol: 'INFY.NS', qty: 15, avgPrice: 1420 }
         ]
         for (const s of demoStocks) {
-            await fetch('http://localhost:3001/api/portfolio/add', {
+            await fetch('/api/portfolio/add', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(s)
@@ -114,7 +114,7 @@ export default function Portfolio() {
                 const qty = row[qtyIdx >= 0 ? qtyIdx : 1]
                 const price = row[priceIdx >= 0 ? priceIdx : 2]
                 if (sym && qty) {
-                    await fetch('http://localhost:3001/api/portfolio/add', {
+                    await fetch('/api/portfolio/add', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ symbol: sym.toUpperCase(), qty: Number(qty), avgPrice: Number(price) })

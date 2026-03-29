@@ -5,6 +5,11 @@ import YahooFinance from 'yahoo-finance2';
 import Parser from 'rss-parser';
 import axios from 'axios';
 import * as cheerio from 'cheerio';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 dotenv.config();
 
@@ -15,6 +20,7 @@ const rssParser = new Parser();
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, '../dist')));
 
 // ─── STORES ──────────────────────────────────────────────
 let signalHistory = [];
@@ -491,6 +497,10 @@ app.post('/api/chat', async (req, res) => {
         console.error('[Chat Error]', err.response?.data || err.message);
         res.status(500).json({ error: 'Chat failed', details: err.response?.data?.error?.message || err.message });
     }
+});
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
 app.listen(PORT, () => {

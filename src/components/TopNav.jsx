@@ -14,7 +14,7 @@ export default function TopNav({ pageTitle, user, onLogout }) {
     useEffect(() => {
         const fetchIndices = async () => {
             try {
-                const res = await fetch('http://localhost:3001/api/market/indices')
+                const res = await fetch('/api/market/indices')
                 if (res.ok) {
                     const data = await res.json()
                     setIndices(
@@ -42,7 +42,7 @@ export default function TopNav({ pageTitle, user, onLogout }) {
         setWhyData(null);
         try {
             const sym = searchValue.includes('.') ? searchValue.toUpperCase() : searchValue.toUpperCase() + '.NS';
-            const res = await fetch(`http://localhost:3001/api/stocks/why/${sym}`);
+            const res = await fetch(`/api/stocks/why/${sym}`);
             const data = await res.json();
             if(data.error) throw new Error(data.error);
             setWhyData({ ...data, symbol: sym });

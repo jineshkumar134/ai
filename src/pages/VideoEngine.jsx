@@ -138,9 +138,9 @@ export default function VideoEngine() {
         const fetchAllData = async () => {
             try {
                 const [trendingRes, flowsRes, ipoRes] = await Promise.all([
-                    fetch('http://localhost:3001/api/market/trending'),
-                    fetch('http://localhost:3001/api/market/flows'),
-                    fetch('http://localhost:3001/api/market/ipo')
+                    fetch('/api/market/trending'),
+                    fetch('/api/market/flows'),
+                    fetch('/api/market/ipo')
                 ]);
                 const trendingData = await trendingRes.json();
                 const flowsData = await flowsRes.json();

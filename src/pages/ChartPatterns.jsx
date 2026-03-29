@@ -59,7 +59,7 @@ export default function ChartPatterns() {
         setWhyData(null)
         try {
             const sym = symbol.includes('.') ? symbol : symbol + '.NS'
-            const res = await fetch(`http://localhost:3001/api/stocks/why/${sym}`)
+            const res = await fetch(`/api/stocks/why/${sym}`)
             const data = await res.json()
             setWhyData({ ...data, symbol })
         } catch (err) { }
@@ -69,7 +69,7 @@ export default function ChartPatterns() {
     useEffect(() => {
         const fetchLivePatterns = async () => {
             try {
-                const res = await fetch('http://localhost:3001/api/market/trending')
+                const res = await fetch('/api/market/trending')
                 if (res.ok) {
                     const data = await res.json()
                     const mappedPatterns = data.map((stock, i) => {
